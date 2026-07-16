@@ -17,11 +17,9 @@ Automatically generate beautiful 3D isometric calendars, language donut slices, 
 <!-- START_SECTION:dashboard -->
 <div align="center">
   
-<p align="center">⚠️ <i>Note: Displaying mock data for demonstration. Set GITHUB_TOKEN to show live stats.</i></p>
-
   <!-- 3D Contribution Graph -->
-  <a href="https://github.com/Abad-87">
-    <img src="output/contribution-3d.svg" alt="Mock Developer (Abad-87)'s 3D GitHub Contribution Calendar" width="840" style="max-width: 100%;" />
+  <a href="https://github.com/None">
+    <img src="output/contribution-3d.svg" alt="GitHub User's 3D GitHub Contribution Calendar" width="840" style="max-width: 100%;" />
   </a>
   <br/><br/>
   
@@ -53,40 +51,40 @@ Automatically generate beautiful 3D isometric calendars, language donut slices, 
     <tbody>
       <tr>
         <td style="padding: 8px; border: 1px solid #30363d;">Year Contributions</td>
-        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>461</b></td>
+        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>0</b></td>
         <td style="padding: 8px; border: 1px solid #30363d;">Current Streak</td>
-        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>1 days</b></td>
+        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>0 days</b></td>
       </tr>
       <tr>
         <td style="padding: 8px; border: 1px solid #30363d;">Lifetime Commits</td>
-        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>991</b></td>
+        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>159</b></td>
         <td style="padding: 8px; border: 1px solid #30363d;">Longest Streak</td>
-        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>4 days</b></td>
+        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>0 days</b></td>
       </tr>
       <tr>
         <td style="padding: 8px; border: 1px solid #30363d;">Total Stars Received</td>
-        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>93</b></td>
+        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>0</b></td>
         <td style="padding: 8px; border: 1px solid #30363d;">Total Forks Created</td>
-        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>15</b></td>
+        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>0</b></td>
       </tr>
       <tr>
         <td style="padding: 8px; border: 1px solid #30363d;">Owned Repositories</td>
-        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>4</b></td>
+        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>0</b></td>
         <td style="padding: 8px; border: 1px solid #30363d;">Pull Request Reviews</td>
-        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>56</b></td>
+        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>0</b></td>
       </tr>
       <tr>
         <td style="padding: 8px; border: 1px solid #30363d;">Pull Requests Created</td>
-        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>178</b></td>
+        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>7</b></td>
         <td style="padding: 8px; border: 1px solid #30363d;">Issues Created</td>
-        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>135</b></td>
+        <td align="center" style="padding: 8px; border: 1px solid #30363d;"><b>1</b></td>
       </tr>
     </tbody>
   </table>
   <br/>
 
   <p align="center">
-    <sub>Last Generated: <b>2026-07-16 10:07:50</b> | Built with <a href="https://github.com/Abad-87/github-3d-contribution">github-3d-contribution</a></sub>
+    <sub>Last Generated: <b>2026-07-16 11:18:06</b> | Built with <a href="https://github.com/Abad-87/github-3d-contribution">github-3d-contribution</a></sub>
   </p>
 </div>
 <!-- END_SECTION:dashboard -->

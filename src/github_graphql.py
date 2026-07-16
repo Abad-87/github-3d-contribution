@@ -117,7 +117,7 @@ def execute_query(
             logger.error(f"GraphQL returned empty data. Response: {result}")
             raise RuntimeError("GitHub GraphQL query returned no user data.")
 
-        return result["data"]
+        return result["data"]["user"]
 
     except requests.exceptions.HTTPError as http_err:
         status_code = http_err.response.status_code if http_err.response else "Unknown"
