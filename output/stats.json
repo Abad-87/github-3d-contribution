@@ -1,20 +1,69 @@
 {
-  "username": null,
-  "display_name": "GitHub User",
-  "followers": 0,
-  "following": 0,
-  "total_repositories": 0,
+  "username": "Abad-87",
+  "display_name": "Syed Abad Mustafa",
+  "followers": 4,
+  "following": 10,
+  "total_repositories": 16,
   "total_stars": 0,
-  "total_forks": 0,
-  "total_contributions": 0,
-  "current_streak": 0,
-  "longest_streak": 0,
-  "lifetime_commits": 159,
+  "total_forks": 3,
+  "total_contributions": 714,
+  "current_streak": 7,
+  "longest_streak": 15,
+  "lifetime_commits": 161,
   "lifetime_prs": 7,
   "lifetime_issues": 1,
   "lifetime_reviews": 0,
-  "languages": [],
-  "total_language_bytes": 0,
+  "languages": [
+    {
+      "name": "HTML",
+      "bytes": 23883191,
+      "percentage": 92.3,
+      "color": "#e34c26"
+    },
+    {
+      "name": "Python",
+      "bytes": 1057125,
+      "percentage": 4.1,
+      "color": "#3572A5"
+    },
+    {
+      "name": "Jupyter Notebook",
+      "bytes": 582008,
+      "percentage": 2.3,
+      "color": "#DA5B0B"
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 321949,
+      "percentage": 1.2,
+      "color": "#3178c6"
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 14498,
+      "percentage": 0.1,
+      "color": "#f1e05a"
+    },
+    {
+      "name": "CSS",
+      "bytes": 3267,
+      "percentage": 0.0,
+      "color": "#663399"
+    },
+    {
+      "name": "Dockerfile",
+      "bytes": 366,
+      "percentage": 0.0,
+      "color": "#384d54"
+    },
+    {
+      "name": "Procfile",
+      "bytes": 60,
+      "percentage": 0.0,
+      "color": "#3B2F63"
+    }
+  ],
+  "total_language_bytes": 25862464,
   "is_mock_data": false,
-  "generated_at": "2026-07-16 11:13:21"
+  "generated_at": "2026-07-16 11:33:53"
 }

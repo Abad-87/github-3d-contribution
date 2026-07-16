@@ -196,39 +196,52 @@ def fetch_lifetime_stats(username: str, token: str) -> Dict[str, int]:
 
 
 def fetch_all(username: str, token: Optional[str] = None) -> Dict[str, Any]:
-    """Fetches all repository and contribution stats, saving to data/raw_data.json."""
-    data_file = config.DATA_DIR / "raw_data.json"
-    
-    # Check if we should use live API or mock fallback
+    """Fetches all repository and contribution stats, saving to data/raw_data.json and data/contributions.json."""
     if not token:
-        logger.warning("No authentication token provided. Using mock data mode.")
-        raw_data = generate_mock_data(username)
-    else:
-        try:
-            graphql_data = execute_query(username, token)
-            lifetime_stats = fetch_lifetime_stats(username, token)
-            
-            raw_data = {
-                "graphql": graphql_data,
-                "lifetime": lifetime_stats,
-                "is_mock": False
-            }
-            logger.info("Successfully fetched all stats from live GitHub APIs.")
-        except Exception as exc:
-            logger.error(
-                f"Failed to fetch from live APIs: {exc}. "
-                "Falling back to mock data so dashboard generation can continue."
-            )
-            raw_data = generate_mock_data(username)
+        logger.error("No GITHUB_TOKEN or GH_TOKEN found in environment. Cannot fetch real contributions.")
+        raise ValueError("GH_TOKEN/GITHUB_TOKEN environment variable is required.")
 
-    # Save to data directory
+    # Live query only - no mock fallback
+    graphql_data = execute_query(username, token)
+    lifetime_stats = fetch_lifetime_stats(username, token)
+    
+    raw_data = {
+        "graphql": graphql_data,
+        "lifetime": lifetime_stats,
+        "is_mock": False
+    }
+    logger.info("Successfully fetched all stats from live GitHub APIs.")
+
+    # Save raw_data.json (for stats/donut/radar dependencies)
+    raw_file = config.DATA_DIR / "raw_data.json"
     try:
         config.DATA_DIR.mkdir(parents=True, exist_ok=True)
-        with open(data_file, "w", encoding="utf-8") as f:
+        with open(raw_file, "w", encoding="utf-8") as f:
             json.dump(raw_data, f, indent=2, ensure_ascii=False)
-        logger.info(f"Raw data saved to {data_file}")
+        logger.info(f"Raw data saved to {raw_file}")
     except Exception as e:
         logger.error(f"Failed to save raw data file: {e}")
+        raise e
+
+    # Parse and save contributions.json
+    contributions_list = []
+    weeks = graphql_data.get("contributionsCollection", {}).get("contributionCalendar", {}).get("weeks", [])
+    for week in weeks:
+        for day in week.get("contributionDays", []):
+            contributions_list.append({
+                "date": day["date"],
+                "count": day["contributionCount"],
+                "level": day["contributionLevel"]
+            })
+
+    contrib_file = config.DATA_DIR / "contributions.json"
+    try:
+        with open(contrib_file, "w", encoding="utf-8") as f:
+            json.dump(contributions_list, f, indent=2, ensure_ascii=False)
+        logger.info(f"Real contribution data saved to {contrib_file}")
+    except Exception as e:
+        logger.error(f"Failed to save contributions.json: {e}")
+        raise e
 
     return raw_data
 
@@ -236,3 +249,4 @@ def fetch_all(username: str, token: Optional[str] = None) -> Dict[str, Any]:
 if __name__ == "__main__":
     # Fetch data directly when executing script
     fetch_all(config.USERNAME, config.GITHUB_TOKEN)
+    print("REAL CONTRIBUTION SYNC ENABLED")
