@@ -4,8 +4,11 @@ Loads user language stats, calculates slice angles with rounded edges,
 places formatting indicators, and draws an interactive legend card.
 """
 
-import json
+import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+import json
 from typing import Dict, Any, List
 
 from src.utils import get_logger, save_svg_and_png

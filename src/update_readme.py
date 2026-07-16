@@ -5,10 +5,13 @@ and inserts it into README.md between specific section tags. Overwrites README.m
 with a complete showcase page if markers do not exist.
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import re
 import json
 import datetime
-from pathlib import Path
 from typing import Dict, Any
 
 from src.utils import get_logger

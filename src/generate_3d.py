@@ -4,9 +4,12 @@ Applies isometric projection coordinates to render the 53 weeks x 7 days grid
 as realistic columns with 3D faces, shadows, legends, and month headers.
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import json
 import datetime
-from pathlib import Path
 from typing import Dict, Any, List
 
 from src.utils import get_logger, save_svg_and_png

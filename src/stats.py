@@ -4,9 +4,12 @@ Parses raw GitHub data to calculate streaks (current, longest), aggregate reposi
 stargazers/forks, sum language bytes/percentages, and export compiled metrics to stats.json.
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import json
 import datetime
-from pathlib import Path
 from typing import Dict, Any, List
 
 from src.utils import get_logger

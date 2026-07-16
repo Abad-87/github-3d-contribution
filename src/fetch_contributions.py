@@ -4,11 +4,14 @@ Retrieves details from GitHub's GraphQL and REST Search APIs, compiling
 them into a raw JSON file. Supports a comprehensive offline simulation mode.
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import json
 import math
 import random
 import datetime
-from pathlib import Path
 from typing import Dict, Any, Optional
 
 from src.utils import get_http_session, get_logger
