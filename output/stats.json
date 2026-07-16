@@ -1,0 +1,51 @@
+{
+  "username": "Abad-87",
+  "display_name": "Mock Developer (Abad-87)",
+  "followers": 87,
+  "following": 43,
+  "total_repositories": 4,
+  "total_stars": 93,
+  "total_forks": 15,
+  "total_contributions": 461,
+  "current_streak": 1,
+  "longest_streak": 4,
+  "lifetime_commits": 991,
+  "lifetime_prs": 178,
+  "lifetime_issues": 135,
+  "lifetime_reviews": 56,
+  "languages": [
+    {
+      "name": "Python",
+      "bytes": 1050000,
+      "percentage": 65.6,
+      "color": "#3572A5"
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 220000,
+      "percentage": 13.8,
+      "color": "#3178c6"
+    },
+    {
+      "name": "Go",
+      "bytes": 220000,
+      "percentage": 13.8,
+      "color": "#00ADD8"
+    },
+    {
+      "name": "HTML",
+      "bytes": 80000,
+      "percentage": 5.0,
+      "color": "#e34c26"
+    },
+    {
+      "name": "CSS",
+      "bytes": 30000,
+      "percentage": 1.9,
+      "color": "#563d7c"
+    }
+  ],
+  "total_language_bytes": 1600000,
+  "is_mock_data": true,
+  "generated_at": "2026-07-16 10:06:32"
+}

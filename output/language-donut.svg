@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 260" width="100%" height="100%" class="svg-container">
+    
+    <style>
+        .svg-container {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: transparent;
+        }
+        
+        /* Grid and borders */
+        .grid-line {
+            stroke: #30363d;
+            stroke-width: 1;
+            opacity: 0.5;
+        }
+        .border-line {
+            stroke: #21262d;
+            stroke-width: 1.5;
+        }
+        
+        /* Interactive 3D cubes */
+        .cube-group {
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), filter 0.25s ease;
+            cursor: pointer;
+        }
+        .cube-group:hover {
+            transform: translateY(-8px);
+            filter: brightness(1.2) drop-shadow(0 12px 16px rgba(0, 0, 0, 0.6));
+        }
+        
+        /* Donut slice hover logic */
+        .donut-slice {
+            transition: stroke-width 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+            cursor: pointer;
+        }
+        .donut-slice:hover {
+            stroke-width: 34 !important;
+            filter: brightness(1.15) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+            opacity: 1 !important;
+        }
+
+        /* Radar chart hover items */
+        .radar-area {
+            transition: fill-opacity 0.3s ease, stroke-width 0.3s ease;
+        }
+        .radar-area:hover {
+            fill-opacity: 0.35;
+            stroke-width: 3px;
+        }
+        .radar-marker {
+            transition: r 0.2s ease, fill 0.2s ease;
+        }
+        .radar-marker:hover {
+            r: 7;
+            fill: #ffffff;
+        }
+        
+        
+        @keyframes floatIn {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .animate-item {
+            animation: floatIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        
+    </style>
+    
+    
+    <defs>
+        <!-- Soft drop shadow for isometric elements -->
+        <filter id="cube-shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
+        </filter>
+        
+        <!-- Drop shadow for text and cards -->
+        <filter id="card-shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+        </filter>
+
+        <!-- Glow filter for radar outlines and accents -->
+        <filter id="accent-glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="5" result="blur" />
+            <feComponentTransfer in="blur" result="glow">
+                <feFuncA type="linear" slope="0.5"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode in="glow"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <rect x="2.00" y="2.00" width="436.00" height="256.00" rx="16.00" ry="16.00" fill="#0d1117" opacity="1.00" stroke="#21262d" stroke-width="1.50" filter="url(#card-shadow)" /><text x="25.00" y="34.00" font-size="15" fill="#f0f6fc" text-anchor="start" font-weight="bold" opacity="1.00">Most Used Languages</text><circle cx="115.00" cy="135.00" r="70.00" fill="none" opacity="0.30" stroke="#30363d" stroke-width="22.00" />        <path d="M 116.83 65.02 A 70.00 70.00 0 1 1 57.90 175.49" fill="none" stroke="#3572A5" stroke-width="22.0" stroke-linecap="round" class="donut-slice animate-item" style="animation-delay: 0.00s; transform-origin: 115.0px 135.0px;" />
+        <path d="M 55.86 172.45 A 70.00 70.00 0 0 1 47.18 117.66" fill="none" stroke="#3178c6" stroke-width="22.0" stroke-linecap="round" class="donut-slice animate-item" style="animation-delay: 0.10s; transform-origin: 115.0px 135.0px;" />
+        <path d="M 48.18 114.14 A 70.00 70.00 0 0 1 84.34 72.07" fill="none" stroke="#00ADD8" stroke-width="22.0" stroke-linecap="round" class="donut-slice animate-item" style="animation-delay: 0.20s; transform-origin: 115.0px 135.0px;" />
+        <path d="M 87.67 70.56 A 70.00 70.00 0 0 1 105.28 65.68" fill="none" stroke="#e34c26" stroke-width="22.0" stroke-linecap="round" class="donut-slice animate-item" style="animation-delay: 0.30s; transform-origin: 115.0px 135.0px;" />
+        <path d="M 107.10 65.45 A 70.00 70.00 0 0 1 115.44 65.00" fill="none" stroke="#563d7c" stroke-width="22.0" stroke-linecap="round" class="donut-slice animate-item" style="animation-delay: 0.40s; transform-origin: 115.0px 135.0px;" />
+<text x="115.00" y="129.00" font-size="9" fill="#8b949e" text-anchor="middle" font-weight="bold" opacity="0.80">TOTAL SIZE</text><text x="115.00" y="147.00" font-size="13" fill="#f0f6fc" text-anchor="middle" font-weight="bold" opacity="1.00">1.5 MB</text><circle cx="230.00" cy="61.00" r="6.00" fill="#3572A5" opacity="1.00" /><text x="246.00" y="65.00" font-size="12" fill="#f0f6fc" text-anchor="start" font-weight="bold" opacity="1.00">Python</text><text x="415.00" y="65.00" font-size="12" fill="#8b949e" text-anchor="end" font-weight="normal" opacity="1.00">65.6%</text><circle cx="230.00" cy="93.00" r="6.00" fill="#3178c6" opacity="1.00" /><text x="246.00" y="97.00" font-size="12" fill="#f0f6fc" text-anchor="start" font-weight="bold" opacity="1.00">TypeScript</text><text x="415.00" y="97.00" font-size="12" fill="#8b949e" text-anchor="end" font-weight="normal" opacity="1.00">13.8%</text><circle cx="230.00" cy="125.00" r="6.00" fill="#00ADD8" opacity="1.00" /><text x="246.00" y="129.00" font-size="12" fill="#f0f6fc" text-anchor="start" font-weight="bold" opacity="1.00">Go</text><text x="415.00" y="129.00" font-size="12" fill="#8b949e" text-anchor="end" font-weight="normal" opacity="1.00">13.8%</text><circle cx="230.00" cy="157.00" r="6.00" fill="#e34c26" opacity="1.00" /><text x="246.00" y="161.00" font-size="12" fill="#f0f6fc" text-anchor="start" font-weight="bold" opacity="1.00">HTML</text><text x="415.00" y="161.00" font-size="12" fill="#8b949e" text-anchor="end" font-weight="normal" opacity="1.00">5.0%</text><circle cx="230.00" cy="189.00" r="6.00" fill="#563d7c" opacity="1.00" /><text x="246.00" y="193.00" font-size="12" fill="#f0f6fc" text-anchor="start" font-weight="bold" opacity="1.00">CSS</text><text x="415.00" y="193.00" font-size="12" fill="#8b949e" text-anchor="end" font-weight="normal" opacity="1.00">1.9%</text>
+</svg>

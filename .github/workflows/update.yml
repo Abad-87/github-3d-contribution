@@ -1,0 +1,75 @@
+name: Update GitHub 3D Dashboard
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Runs daily at midnight UTC
+  workflow_dispatch: # Allows manual execution
+
+permissions:
+  contents: write
+
+jobs:
+  update-dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcairo2 libcairo2-dev pkg-config python3-dev
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Dashboard Pipeline
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+          THEME: dark
+          PALETTE: green
+        run: |
+          echo "1. Fetching contributions collection..."
+          python src/fetch_contributions.py
+          
+          echo "2. Compiling statistics..."
+          python src/stats.py
+          
+          echo "3. Generating 3D isometric calendar..."
+          python src/generate_3d.py
+          
+          echo "4. Generating language donut chart..."
+          python src/generate_donut.py
+          
+          echo "5. Generating developer stats radar..."
+          python src/generate_radar.py
+          
+          echo "6. Injecting dashboard into README..."
+          python src/update_readme.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Check if there are modified or untracked dashboard files
+          git add output/ README.md
+          
+          if git diff --staged --quiet; then
+            echo "No changes detected in dashboard metrics. Skipping commit."
+          else
+            echo "Changes detected. Committing and pushing to main..."
+            git commit -m "Update GitHub 3D Contribution Dashboard [skip ci]"
+            git push
+          fi

@@ -1,0 +1,10 @@
+requests>=2.31.0
+numpy>=1.26.0
+pandas>=2.2.0
+matplotlib>=3.8.0
+plotly>=5.18.0
+cairosvg>=2.7.1
+svgwrite>=1.4.3
+Pillow>=10.2.0
+PyGithub>=2.1.0
+python-dotenv>=1.0.1

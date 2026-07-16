@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 260" width="100%" height="100%" class="svg-container">
+    
+    <style>
+        .svg-container {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: transparent;
+        }
+        
+        /* Grid and borders */
+        .grid-line {
+            stroke: #30363d;
+            stroke-width: 1;
+            opacity: 0.5;
+        }
+        .border-line {
+            stroke: #21262d;
+            stroke-width: 1.5;
+        }
+        
+        /* Interactive 3D cubes */
+        .cube-group {
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), filter 0.25s ease;
+            cursor: pointer;
+        }
+        .cube-group:hover {
+            transform: translateY(-8px);
+            filter: brightness(1.2) drop-shadow(0 12px 16px rgba(0, 0, 0, 0.6));
+        }
+        
+        /* Donut slice hover logic */
+        .donut-slice {
+            transition: stroke-width 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+            cursor: pointer;
+        }
+        .donut-slice:hover {
+            stroke-width: 34 !important;
+            filter: brightness(1.15) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+            opacity: 1 !important;
+        }
+
+        /* Radar chart hover items */
+        .radar-area {
+            transition: fill-opacity 0.3s ease, stroke-width 0.3s ease;
+        }
+        .radar-area:hover {
+            fill-opacity: 0.35;
+            stroke-width: 3px;
+        }
+        .radar-marker {
+            transition: r 0.2s ease, fill 0.2s ease;
+        }
+        .radar-marker:hover {
+            r: 7;
+            fill: #ffffff;
+        }
+        
+        
+        @keyframes floatIn {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .animate-item {
+            animation: floatIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        
+    </style>
+    
+    
+    <defs>
+        <!-- Soft drop shadow for isometric elements -->
+        <filter id="cube-shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
+        </filter>
+        
+        <!-- Drop shadow for text and cards -->
+        <filter id="card-shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+        </filter>
+
+        <!-- Glow filter for radar outlines and accents -->
+        <filter id="accent-glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="5" result="blur" />
+            <feComponentTransfer in="blur" result="glow">
+                <feFuncA type="linear" slope="0.5"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode in="glow"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <rect x="2.00" y="2.00" width="436.00" height="256.00" rx="16.00" ry="16.00" fill="#0d1117" opacity="1.00" stroke="#21262d" stroke-width="1.50" filter="url(#card-shadow)" /><text x="25.00" y="34.00" font-size="15" fill="#f0f6fc" text-anchor="start" font-weight="bold" opacity="1.00">Developer Stats Profile</text>    <polygon points="220.00,120.00 231.57,124.21 237.73,134.87 235.59,147.00 226.16,154.91 213.84,154.91 204.41,147.00 202.27,134.87 208.43,124.21" fill="none" stroke="#30363d" stroke-width="0.8" opacity="0.45" />
+    <polygon points="220.00,102.00 243.14,110.42 255.45,131.75 251.18,156.00 232.31,171.83 207.69,171.83 188.82,156.00 184.55,131.75 196.86,110.42" fill="none" stroke="#30363d" stroke-width="0.8" opacity="0.45" />
+    <polygon points="220.00,84.00 254.71,96.63 273.18,128.62 266.77,165.00 238.47,188.74 201.53,188.74 173.23,165.00 166.82,128.62 185.29,96.63" fill="none" stroke="#30363d" stroke-width="0.8" opacity="0.45" />
+    <polygon points="220.00,66.00 266.28,82.84 290.91,125.50 282.35,174.00 244.63,205.66 195.37,205.66 157.65,174.00 149.09,125.50 173.72,82.84" fill="none" stroke="#30363d" stroke-width="0.8" opacity="0.45" />
+<line x1="220.00" y1="138.00" x2="220.00" y2="66.00" stroke="#30363d" stroke-width="1.00" opacity="0.40" /><line x1="220.00" y1="138.00" x2="266.28" y2="82.84" stroke="#30363d" stroke-width="1.00" opacity="0.40" /><line x1="220.00" y1="138.00" x2="290.91" y2="125.50" stroke="#30363d" stroke-width="1.00" opacity="0.40" /><line x1="220.00" y1="138.00" x2="282.35" y2="174.00" stroke="#30363d" stroke-width="1.00" opacity="0.40" /><line x1="220.00" y1="138.00" x2="244.63" y2="205.66" stroke="#30363d" stroke-width="1.00" opacity="0.40" /><line x1="220.00" y1="138.00" x2="195.37" y2="205.66" stroke="#30363d" stroke-width="1.00" opacity="0.40" /><line x1="220.00" y1="138.00" x2="157.65" y2="174.00" stroke="#30363d" stroke-width="1.00" opacity="0.40" /><line x1="220.00" y1="138.00" x2="149.09" y2="125.50" stroke="#30363d" stroke-width="1.00" opacity="0.40" /><line x1="220.00" y1="138.00" x2="173.72" y2="82.84" stroke="#30363d" stroke-width="1.00" opacity="0.40" />    <polygon points="220.00,79.67 236.14,118.77 271.82,128.86 252.60,156.82 242.81,200.67 197.62,199.50 172.46,165.45 168.93,129.00 186.98,98.64" fill="rgba(57, 211, 83, 0.2)" stroke="#39d353" stroke-width="2" filter="url(#accent-glow)" class="radar-area animate-item" style="animation: floatIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;" />
+<text x="220.00" y="45.00" font-size="10" fill="#8b949e" text-anchor="middle" font-weight="bold" opacity="1.00">Commits</text><text x="220.00" y="56.00" font-size="9" fill="#f0f6fc" text-anchor="middle" font-weight="normal" opacity="1.00">991</text><text x="275.92" y="74.35" font-size="10" fill="#8b949e" text-anchor="start" font-weight="bold" opacity="1.00">Repos</text><text x="275.92" y="85.35" font-size="9" fill="#f0f6fc" text-anchor="start" font-weight="normal" opacity="1.00">4</text><text x="305.68" y="125.89" font-size="10" fill="#8b949e" text-anchor="start" font-weight="bold" opacity="1.00">Stars</text><text x="305.68" y="136.89" font-size="9" fill="#f0f6fc" text-anchor="start" font-weight="normal" opacity="1.00">93</text><text x="295.34" y="184.50" font-size="10" fill="#8b949e" text-anchor="start" font-weight="bold" opacity="1.00">Forks</text><text x="295.34" y="195.50" font-size="9" fill="#f0f6fc" text-anchor="start" font-weight="normal" opacity="1.00">15</text><text x="249.76" y="231.75" font-size="10" fill="#8b949e" text-anchor="start" font-weight="bold" opacity="1.00">Issues</text><text x="249.76" y="242.75" font-size="9" fill="#f0f6fc" text-anchor="start" font-weight="normal" opacity="1.00">135</text><text x="190.24" y="231.75" font-size="10" fill="#8b949e" text-anchor="end" font-weight="bold" opacity="1.00">PRs</text><text x="190.24" y="242.75" font-size="9" fill="#f0f6fc" text-anchor="end" font-weight="normal" opacity="1.00">178</text><text x="144.66" y="184.50" font-size="10" fill="#8b949e" text-anchor="end" font-weight="bold" opacity="1.00">Reviews</text><text x="144.66" y="195.50" font-size="9" fill="#f0f6fc" text-anchor="end" font-weight="normal" opacity="1.00">56</text><text x="134.32" y="125.89" font-size="10" fill="#8b949e" text-anchor="end" font-weight="bold" opacity="1.00">Followers</text><text x="134.32" y="136.89" font-size="9" fill="#f0f6fc" text-anchor="end" font-weight="normal" opacity="1.00">87</text><text x="164.08" y="74.35" font-size="10" fill="#8b949e" text-anchor="end" font-weight="bold" opacity="1.00">Following</text><text x="164.08" y="85.35" font-size="9" fill="#f0f6fc" text-anchor="end" font-weight="normal" opacity="1.00">43</text><circle cx="220.00" cy="79.67" r="3.50" fill="#39d353" opacity="1.00" stroke="#ffffff" stroke-width="1.00" class="radar-marker" /><circle cx="236.14" cy="118.77" r="3.50" fill="#39d353" opacity="1.00" stroke="#ffffff" stroke-width="1.00" class="radar-marker" /><circle cx="271.82" cy="128.86" r="3.50" fill="#39d353" opacity="1.00" stroke="#ffffff" stroke-width="1.00" class="radar-marker" /><circle cx="252.60" cy="156.82" r="3.50" fill="#39d353" opacity="1.00" stroke="#ffffff" stroke-width="1.00" class="radar-marker" /><circle cx="242.81" cy="200.67" r="3.50" fill="#39d353" opacity="1.00" stroke="#ffffff" stroke-width="1.00" class="radar-marker" /><circle cx="197.62" cy="199.50" r="3.50" fill="#39d353" opacity="1.00" stroke="#ffffff" stroke-width="1.00" class="radar-marker" /><circle cx="172.46" cy="165.45" r="3.50" fill="#39d353" opacity="1.00" stroke="#ffffff" stroke-width="1.00" class="radar-marker" /><circle cx="168.93" cy="129.00" r="3.50" fill="#39d353" opacity="1.00" stroke="#ffffff" stroke-width="1.00" class="radar-marker" /><circle cx="186.98" cy="98.64" r="3.50" fill="#39d353" opacity="1.00" stroke="#ffffff" stroke-width="1.00" class="radar-marker" />
+</svg>
