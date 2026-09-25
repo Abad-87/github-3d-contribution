@@ -6,18 +6,18 @@
   "total_repositories": 17,
   "total_stars": 0,
   "total_forks": 5,
-  "total_contributions": 696,
-  "current_streak": 2,
+  "total_contributions": 715,
+  "current_streak": 3,
   "longest_streak": 15,
-  "lifetime_commits": 206,
+  "lifetime_commits": 228,
   "lifetime_prs": 14,
   "lifetime_issues": 1,
   "lifetime_reviews": 1,
   "languages": [
     {
       "name": "HTML",
-      "bytes": 23896655,
-      "percentage": 88.4,
+      "bytes": 23896738,
+      "percentage": 88.2,
       "color": "#e34c26"
     },
     {
@@ -28,9 +28,15 @@
     },
     {
       "name": "Python",
-      "bytes": 932486,
+      "bytes": 936745,
       "percentage": 3.5,
       "color": "#3572A5"
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 337282,
+      "percentage": 1.2,
+      "color": "#f1e05a"
     },
     {
       "name": "TypeScript",
@@ -39,15 +45,9 @@
       "color": "#3178c6"
     },
     {
-      "name": "JavaScript",
-      "bytes": 280038,
-      "percentage": 1.0,
-      "color": "#f1e05a"
-    },
-    {
       "name": "CSS",
-      "bytes": 109314,
-      "percentage": 0.4,
+      "bytes": 126346,
+      "percentage": 0.5,
       "color": "#663399"
     },
     {
@@ -63,7 +63,7 @@
       "color": "#3B2F63"
     }
   ],
-  "total_language_bytes": 27018367,
+  "total_language_bytes": 27096985,
   "is_mock_data": false,
-  "generated_at": "2026-09-24 02:34:13"
+  "generated_at": "2026-09-25 02:50:57"
 }
